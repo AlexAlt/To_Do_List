@@ -23,9 +23,27 @@ $(document).ready(function() {
        var task = $(this).find("input.task-name").val();
        var description = $(this).find("input.task-description").val();
 
-       var newTask = { name: title, description: description };
+       var newTask = { name: task, description: description };
        newList.tasks.push(newTask);
      });
 
- });
+   $("ul#lists").append("<li><span class='list'>" + newList.title + "</span></li>");
+
+   $(".list").last().click(function() {
+     $("#show-list").show();
+     $("#show-list h2").text(newList.title);
+     $(".list-title").text(newList.title);
+
+
+     $("ul#tasks").text("");
+     newList.tasks.forEach(function(task) {
+       $("ul#tasks").append("<li>" + task.name + ", " + task.description + "</li>");
+     });
+    });
+
+    $("input#list-title").val("");
+    $("input.task-name").val("");
+    $("input.task-description").val("");
+
+  });
 });
