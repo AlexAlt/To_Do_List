@@ -15,13 +15,18 @@
             <label for="list-title">Title</label>
             <input type="text" class="form-control" id="list-title">
           </div>
-          <div class="form-group">
-            <label for="newTask">Task</label>
-            <input type="text" class="form-control newTask">
-          </div>
-          <div class="form-group">
-            <label for="task-description">Description</label>
-            <input type="text" class="form-control task-description">
+
+          <div id="new-tasks">
+            <div class="new-task">
+              <div class="form-group">
+                <label for="task-name">Task</label>
+                <input type="text" class="form-control task-name">
+              </div>
+              <div class="form-group">
+                <label for="task-description">Description</label>
+                <input type="text" class="form-control task-description">
+              </div>
+            </div>
           </div>
 
           <button type="submit" class=" btn btn-default btn-sm">Add List</button>
@@ -30,7 +35,7 @@
 
         <ul id="lists">
         </ul>
-        
+
     </div>
   </body>
 </html>
